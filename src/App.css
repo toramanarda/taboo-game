@@ -151,9 +151,12 @@ h1 {
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center; 
+  justify-content: flex-start;  /* yukarıdan hizalansın */
   animation: fadeIn 0.5s ease-in;
   box-sizing: border-box;
+
+  max-height: 90vh;     /* ekranı aşmasın */
+  overflow-y: auto;     /* içerik fazlaysa kaydırılsın */
 }
 
 .settings label {

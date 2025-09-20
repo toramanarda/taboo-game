@@ -28,15 +28,23 @@ export default function Settings({ startGame }) {
           min={1}
           max={10}
           onChange={(e) => {
-            const val = Number(e.target.value);
-            setPlayers(val);
-            // Oyuncu isimlerini ayarla
-            setPlayerNames(prev => {
-              const newArr = [...prev];
-              while (newArr.length < val) newArr.push(`Oyuncu ${newArr.length + 1}`);
-              while (newArr.length > val) newArr.pop();
-              return newArr;
-            });
+            const val = e.target.value;
+            if (val === "") {
+              setPlayers(""); // boş bırak
+              setPlayerNames([]); // boşsa isimleri de sıfırla
+            } else {
+              const numVal = Number(val);
+              setPlayers(numVal);
+
+              // Oyuncu isimlerini ayarla
+              setPlayerNames((prev) => {
+                const newArr = [...prev];
+                while (newArr.length < numVal)
+                  newArr.push(`Oyuncu ${newArr.length + 1}`);
+                while (newArr.length > numVal) newArr.pop();
+                return newArr;
+              });
+            }
           }}
         />
       </label>
@@ -60,7 +68,14 @@ export default function Settings({ startGame }) {
           value={pasHakki}
           min={1}
           max={10}
-          onChange={(e) => setPasHakki(Number(e.target.value))}
+          onChange={(e) => {
+            const val = e.target.value;
+            if (val === "") {
+              setPasHakki(""); // boş bırak
+            } else {
+              setPasHakki(Number(val));
+            }
+          }}
         />
       </label>
 
@@ -71,7 +86,14 @@ export default function Settings({ startGame }) {
           value={turnTime}
           min={10}
           max={300}
-          onChange={(e) => setTurnTime(Number(e.target.value))}
+          onChange={(e) => {
+            const val = e.target.value;
+            if (val === "") {
+              setTurnTime(""); // boş bırak
+            } else {
+              setTurnTime(Number(val));
+            }
+          }}
         />
       </label>
 
