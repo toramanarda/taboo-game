@@ -1,0 +1,208 @@
+/* Genel body ve arka plan */
+body {
+  font-family: 'Arial', sans-serif;
+  margin: 0;
+  padding: 0;
+  background: linear-gradient(135deg, #f6d365, #fda085);
+  height: 100vh; /* viewport yüksekliği */
+  display: flex;
+  justify-content: center; /* yatay ortala */
+  align-items: center;     /* dikey ortala */
+  overflow: hidden;        /* dikey scroll engelle */
+  box-sizing: border-box;
+}
+
+/* Ana uygulama */
+.app {
+  width: 100%;
+  max-width: 500px;
+  text-align: center;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center; /* dikeyde ortala */
+  height: 100%; /* body yüksekliğini kapla */
+  box-sizing: border-box;
+}
+
+/* Başlık */
+h1 {
+  font-size: 2.5rem;
+  margin-bottom: 25px;
+  text-shadow: 2px 2px rgba(0,0,0,0.2);
+}
+
+/* Kart tasarımı */
+.card {
+  background-color: rgba(255, 255, 255, 0.95);
+  color: #333;
+  border-radius: 20px;
+  padding: 25px 20px;
+  margin: 20px 0;
+  width: 100%;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.3);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  max-height: 70vh;       /* içerik uzunluğunda scroll */
+  overflow-y: auto;       /* kart içinde scroll */
+}
+
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 20px 40px rgba(0,0,0,0.4);
+}
+
+/* Fade animasyonu */
+.fadeIn {
+  animation: fadeIn 0.5s ease-in;
+}
+
+@keyframes fadeIn {
+  from {opacity: 0; transform: translateY(20px);}
+  to {opacity: 1; transform: translateY(0);}
+}
+
+.card h2 {
+  font-size: 1.8rem;
+  margin-bottom: 15px;
+}
+
+.card ul {
+  list-style: none;
+  padding: 0;
+  margin-bottom: 15px;
+}
+
+.card ul li {
+  font-weight: bold;
+  color: #d9534f;
+  margin: 4px 0;
+}
+
+.timer {
+  font-size: 1.2rem;
+  font-weight: bold;
+  color: #0275d8;
+  margin-top: 10px;
+}
+
+/* Butonlar */
+.buttons button, .settings button {
+  padding: 12px 25px;
+  margin: 8px;
+  font-size: 16px;
+  font-weight: bold;
+  border: none;
+  border-radius: 12px;
+  cursor: pointer;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.buttons button:hover, .settings button:hover {
+  transform: scale(1.05);
+  box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+}
+
+/* Buton renkleri */
+.correct { background-color: #5cb85c; color: white; }
+.pass { background-color: #f0ad4e; color: white; }
+.tabuu { background-color: #d9534f; color: white; }
+
+/* Hazırım butonu özel */
+.startTurn {
+  background-color: #0275d8;
+  color: white;
+  font-size: 1.3rem;
+  font-weight: bold;
+  padding: 15px 40px;
+  border-radius: 25px;
+  margin-top: 20px;
+  border: none;
+  cursor: pointer;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.startTurn:hover {
+  transform: scale(1.05);
+  box-shadow: 0 10px 25px rgba(0,0,0,0.3);
+}
+
+/* Scoreboard */
+.scoreboard {
+  margin-top: 20px;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.scoreboard div {
+  background: #0275d8;
+  color: white;
+  padding: 8px 15px;
+  border-radius: 12px;
+  margin: 5px;
+  font-weight: bold;
+  box-shadow: 0 3px 10px rgba(0,0,0,0.2);
+}
+
+/* Settings ekranı */
+.settings {
+  background: rgba(255, 255, 255, 0.95);
+  width: 100%;
+  max-width: 450px;
+  padding: 10px 20px;
+  border-radius: 20px;
+  box-shadow: 0 15px 30px rgba(0,0,0,0.3);
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center; /* dikey içeriği ortala */
+  animation: fadeIn 0.5s ease-in;
+  box-sizing: border-box;
+}
+
+/* Settings input */
+.settings label {
+  display: block;
+  margin: 12px 0;
+  font-weight: bold;
+  font-size: 1rem;
+  color: #333;
+}
+
+.settings input {
+  width: 100%; /* tüm inputlar eşit genişlikte */
+  padding: 10px 12px;
+  border-radius: 10px;
+  border: 1px solid #ccc;
+  font-size: 1rem;
+  margin-top: 5px;
+  box-sizing: border-box;
+}
+
+/* Tablet için height ve scroll düzeltmesi */
+@media (min-width: 601px) and (max-width: 1024px) {
+  body {
+    overflow: auto; /* gerektiğinde scroll ver */
+    align-items: center; /* dikey ortalama */
+  }
+
+  .app {
+    padding: 0px 20px;
+  }
+}
+
+/* Mobil responsive */
+@media (max-width: 600px) {
+  .app { padding: 20px 15px; }
+  h1 { font-size: 2rem; }
+  .card { padding: 20px 15px; }
+  .card h2 { font-size: 1.5rem; }
+  .buttons button, .settings button, .startTurn { padding: 10px 18px; font-size: 14px; }
+  .settings { margin: 0 auto; padding: 20px 15px; }
+}
