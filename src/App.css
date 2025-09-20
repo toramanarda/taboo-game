@@ -157,6 +157,7 @@ h1 {
 }
 
 .settings label {
+  width: 350px;
   display: block;
   margin: 12px 0;
   font-weight: bold;
