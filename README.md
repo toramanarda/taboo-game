@@ -1,12 +1,25 @@
-# React + Vite
+# 🎉 Taboo Oyunu – React.js
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+**Geliştirici:** Arda Toraman  
+**Web Sitesi:** [toramanarda.com.tr](https://toramanarda.com.tr)
 
-Currently, two official plugins are available:
+---
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## **⚡ Proje Hakkında**
 
-## Expanding the ESLint configuration
+Bu proje, klasik **Taboo oyununu** web ortamında oynayabilmeniz için hazırlanmıştır.  
+React.js kullanılarak geliştirilmiş, **responsive ve modern bir tasarıma sahip** bir oyundur.  
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+Oyun, **çok oyunculu veya takım modunda**, süreli turlar ve puanlama sistemi ile çalışır. Ayrıca oyuncular kendi isimlerini girebilir ve skorlar anlık olarak takip edilebilir.
+
+---
+
+## **✨ Özellikler**
+
+- 🎨 **Responsive tasarım** – Mobil, tablet ve masaüstü uyumlu  
+- 🧑‍🤝‍🧑 **Oyuncu isimleri** – Her oyuncu kendi ismini belirleyebilir  
+- ⏱ **Ayarlanabilir tur süresi** – Settings ekranında her oyuncu tur süresi değiştirilebilir  
+- 🔄 **Pas hakkı** – Her oyuncunun sınırlı pas hakkı vardır  
+- ❌ **Taboo tuşu** – Taboo yapıldığında skor düşer  
+- 🏆 **Skorboard** – Oyuncu skorları isimleri ile görüntülenir  
+- ✨ **Animasyonlu kartlar** – Kartlar ve butonlar fadeIn ve hover efektlerine sahiptir  
