@@ -13,7 +13,7 @@ export default function App() {
   const [gameOver, setGameOver] = useState(false);
   const [turnStarted, setTurnStarted] = useState(false);
 
-  // JSON yükleme
+  // JSON yukledim
   useEffect(() => {
     fetch("/cards.json")
       .then(res => res.json())
@@ -21,21 +21,21 @@ export default function App() {
       .catch(err => console.error(err));
   }, []);
 
-  // Oyunu başlat
+  // Oyunu baslat
   const startGame = ({ players, pasHakki, turnTime, playerNames }) => {
     setSettings({ players, pasHakki, turnTime, playerNames });
     setScores(Array(players).fill(0));
     setRemainingPas(pasHakki);
   };
 
-  // Kart seç
+  // Kart sec
   const pickRandomCard = () => {
     if (cards.length === 0) return;
     const idx = Math.floor(Math.random() * cards.length);
     setCurrentCard({ ...cards[idx], index: idx });
   };
 
-  // Zamanlayıcı
+  // zamanlayici
   useEffect(() => {
     if (!turnStarted) return;
 
@@ -51,7 +51,7 @@ export default function App() {
     return () => clearTimeout(timer);
   }, [turnStarted, timeLeft]);
 
-  // Tur başlat
+  // Tur baslat
   const startTurn = () => {
     setRemainingPas(settings.pasHakki);
     setTimeLeft(settings.turnTime);
@@ -59,7 +59,7 @@ export default function App() {
     pickRandomCard();
   };
 
-  // Tur bitiş
+  // Tur bitis
   const handleEndTurn = () => {
     setTurnStarted(false);
     setCurrentCard(null);
@@ -67,7 +67,7 @@ export default function App() {
     setRemainingPas(settings.pasHakki);
   };
 
-  // Doğru puan
+  // Dogru puan
   const handleCorrect = () => {
     const newScores = [...scores];
     newScores[currentPlayer] += 1;

@@ -30,7 +30,7 @@ export default function Settings({ startGame }) {
           onChange={(e) => {
             const val = Number(e.target.value);
             setPlayers(val);
-            // Yeni isim dizisini güncelle
+            // Oyuncu isimlerini ayarla
             setPlayerNames(prev => {
               const newArr = [...prev];
               while (newArr.length < val) newArr.push(`Oyuncu ${newArr.length + 1}`);
